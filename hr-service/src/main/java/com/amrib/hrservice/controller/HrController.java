@@ -16,8 +16,8 @@ public class HrController {
 
 	List<Employe> employees = Arrays.asList(new Employe("1", "AAA", "BBB", "Doctor general", "aaa.bbb@gmail.com"),
 			new Employe("1", "AAA", "BBB", "Doctor general", "aaa.bbb@gmail.com"),
-			new Employe("1", "AAA", "BBB", "Doctor general", "aaa.bbb@gmail.com"),
-			new Employe("1", "AAA", "BBB", "Doctor general", "aaa.bbb@gmail.com"));
+			new Employe("2", "ABW", "QQQ", "Doctor general", "aaa.bbb@gmail.com"),
+			new Employe("3", "ADE", "SDB", "Doctor general", "aaa.bbb@gmail.com"));
 
 	@GetMapping(value = "/employees")
 	public List<Employe> getEmployees() {
