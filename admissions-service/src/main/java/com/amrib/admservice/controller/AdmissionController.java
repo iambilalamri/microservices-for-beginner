@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.amrib.admservice.model.DiseaseList;
 import com.amrib.admservice.model.Employe;
 import com.amrib.admservice.model.EmployeeList;
 import com.amrib.admservice.model.Patient;
@@ -35,6 +36,11 @@ public class AdmissionController {
 	@GetMapping(value = "/admission/doctors")
 	public EmployeeList getDoctors() {
 		return restTemplate.getForObject("http://localhost:8082/api/v1/employees", EmployeeList.class);
+	}
+
+	@GetMapping(value = "/admission/diseases")
+	public DiseaseList getDiseases() {
+		return restTemplate.getForObject("http://localhost:8083/api/v1/diseases", DiseaseList.class);
 	}
 
 	@GetMapping(value = "/admission/{id}")

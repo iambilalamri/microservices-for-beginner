@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amrib.pathoservice.model.Disease;
+import com.amrib.pathoservice.model.DiseaseList;
 
 @RestController
 @RequestMapping(value = "/api/v1")
@@ -21,8 +22,10 @@ public class PathologyController {
 			new Disease("5", "Ashma", "description", "Warm water bath"));
 
 	@GetMapping(value = "/diseases")
-	public List<Disease> getDiseases() {
-		return diseases;
+	public DiseaseList getDiseases() {
+		DiseaseList diseaseList = new DiseaseList();
+		diseaseList.setDiseases(diseases);
+		return diseaseList;
 	}
 
 	@GetMapping(value = "/diseases/{id}")
