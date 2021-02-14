@@ -32,8 +32,8 @@ public class AdmissionController {
 		return patients;
 	}
 
-	@GetMapping(value = "/doctors")
-	public EmployeeList getDoctors(@PathVariable("id") String id) {
+	@GetMapping(value = "/admission/doctors")
+	public EmployeeList getDoctors() {
 		return restTemplate.getForObject("http://localhost:8082/api/v1/employees", EmployeeList.class);
 	}
 
