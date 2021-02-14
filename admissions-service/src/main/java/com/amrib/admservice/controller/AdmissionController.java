@@ -35,12 +35,12 @@ public class AdmissionController {
 
 	@GetMapping(value = "/admission/doctors")
 	public EmployeeList getDoctors() {
-		return restTemplate.getForObject("http://localhost:8082/api/v1/employees", EmployeeList.class);
+		return restTemplate.getForObject("http://hr-service/api/v1/employees", EmployeeList.class);
 	}
 
 	@GetMapping(value = "/admission/diseases")
 	public DiseaseList getDiseases() {
-		return restTemplate.getForObject("http://localhost:8083/api/v1/diseases", DiseaseList.class);
+		return restTemplate.getForObject("http://pathology-service/api/v1/diseases", DiseaseList.class);
 	}
 
 	@GetMapping(value = "/admission/{id}")
