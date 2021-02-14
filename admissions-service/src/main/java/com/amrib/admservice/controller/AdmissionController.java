@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.amrib.admservice.model.Employe;
+import com.amrib.admservice.model.EmployeeList;
 import com.amrib.admservice.model.Patient;
 
 @RestController
@@ -31,9 +32,9 @@ public class AdmissionController {
 		return patients;
 	}
 
-	@GetMapping(value = "/employee/fromAdmission/{id}")
-	public Employe getDoctors(@PathVariable("id") String id) {
-		return restTemplate.getForObject("http://localhost:8082/api/v1/employees/" + id, Employe.class);
+	@GetMapping(value = "/doctors")
+	public EmployeeList getDoctors(@PathVariable("id") String id) {
+		return restTemplate.getForObject("http://localhost:8082/api/v1/employees", EmployeeList.class);
 	}
 
 	@GetMapping(value = "/admission/{id}")

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amrib.hrservice.model.Employe;
+import com.amrib.hrservice.model.EmployeeList;
 
 @RestController
 @RequestMapping(value = "/api/v1")
@@ -20,8 +21,10 @@ public class HrController {
 			new Employe("3", "ADE", "SDB", "Doctor general", "aaa.bbb@gmail.com"));
 
 	@GetMapping(value = "/employees")
-	public List<Employe> getEmployees() {
-		return employees;
+	public EmployeeList getEmployees() {
+		EmployeeList list = new EmployeeList();
+		list.setEmployes(employees);
+		return list;
 	}
 
 	@GetMapping(value = "/employees/{id}")
